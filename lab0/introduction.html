@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="keil.html" />
+    <link rel="next" href="introduction.html" />
     
     
     <link rel="prev" href="../" />
@@ -124,7 +124,72 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="keil.html">
+        <li class="chapter active" data-level="1.2.1" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="FPGA简介.html">
+            
+                <a href="FPGA简介.html">
+            
+                    
+                    FPGA 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="whyFPGA.html">
+            
+                <a href="whyFPGA.html">
+            
+                    
+                    为什么是 FPGA？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="设计方法.html">
+            
+                <a href="设计方法.html">
+            
+                    
+                    设计方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="平台介绍.html">
+            
+                <a href="平台介绍.html">
+            
+                    
+                    平台介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="keil.html">
             
                 <a href="keil.html">
             
@@ -137,7 +202,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="vivado.html">
+        <li class="chapter " data-level="1.2.7" data-path="vivado.html">
             
                 <a href="vivado.html">
             
@@ -150,7 +215,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="modelsim.html">
+        <li class="chapter " data-level="1.2.8" data-path="modelsim.html">
             
                 <a href="modelsim.html">
             
@@ -293,7 +358,8 @@
                                 
                                 <h1 id="lab0---&#x5DE5;&#x6B32;&#x5584;&#x5176;&#x4E8B;-&#x5FC5;&#x5148;&#x5229;&#x5176;&#x5668;">LAB0 - &#x5DE5;&#x6B32;&#x5584;&#x5176;&#x4E8B; &#x5FC5;&#x5148;&#x5229;&#x5176;&#x5668;</h1>
 <p><img src="../img/lab0/01.png" alt="01" style="zoom:60%;"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By Fengrui Liu, &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2021-11-15 11:00:34 </span> </footer>
+<p>&#x7531;&#x4E8E;&#x672C;&#x6B21;&#x6240;&#x6709;&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;&#x90FD;&#x662F;&#x57FA;&#x4E8E; FPGA &#x642D;&#x5EFA;&#x4E00;&#x4E2A; SoC &#x539F;&#x578B;, &#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E2A;&#x539F;&#x578B;&#x57FA;&#x7840;&#x4E0A;&#x5B66;&#x4E60;&#x4E00;&#x4E9B;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x548C;&#x8F6F;&#x786C;&#x4EF6;&#x534F;&#x540C;&#x8BBE;&#x8BA1;&#x7684;&#x77E5;&#x8BC6;, &#x6240;&#x4EE5; FPGA &#x5F00;&#x53D1;&#x677F;&#x548C;&#x5404;&#x7C7B;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x8F6F;&#x4EF6;&#x662F;&#x6211;&#x4EEC;&#x5B66;&#x4E60; SoC &#x8BBE;&#x8BA1;&#x7684;&#x4E00;&#x4E2A;&#x57FA;&#x7840;. &#x672C;&#x7AE0;&#x5C06;&#x5BF9;&#x4E4B;&#x540E;&#x4ECB;&#x7ECD;&#x7684;&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x786C;&#x4EF6;&#x5E73;&#x53F0;&#x548C;&#x5404;&#x79CD;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x8F6F;&#x4EF6;&#x505A;&#x7B80;&#x8981;&#x7684;&#x4ECB;&#x7ECD;. </p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By Fengrui Liu, &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2021-11-15 19:25:37 </span> </footer>
                                 
                                 </section>
                             
@@ -325,7 +391,7 @@
                 </a>
                 
                 
-                <a href="keil.html" class="navigation navigation-next " aria-label="Next page: Keil">
+                <a href="introduction.html" class="navigation navigation-next " aria-label="Next page: introduction">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -336,7 +402,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LAB0: 工欲善其事 必先利其器","level":"1.2","depth":1,"next":{"title":"Keil","level":"1.2.1","depth":2,"path":"lab0/keil.md","ref":"lab0/keil.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["callouts","intopic-toc","page-footer-ex","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"page-footer-ex":{"copyright":"By Fengrui Liu, 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Guide Book","gitbook":"*"},"file":{"path":"lab0/introduction.md","mtime":"2021-11-15T03:00:34.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-15T08:30:29.665Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LAB0: 工欲善其事 必先利其器","level":"1.2","depth":1,"next":{"title":"introduction","level":"1.2.1","depth":2,"path":"lab0/introduction.md","ref":"lab0/introduction.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["callouts","intopic-toc","page-footer-ex","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"page-footer-ex":{"copyright":"By Fengrui Liu, 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Guide Book","gitbook":"*"},"file":{"path":"lab0/introduction.md","mtime":"2021-11-15T11:25:37.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-15T11:27:08.720Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
