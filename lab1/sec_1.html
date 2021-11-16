@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LAB1: "施法"让 CPU 动起来 · Guide Book</title>
+        <title>RTL设计 · Guide Book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="sec_1.html" />
+    <link rel="next" href="../lab2/introduction.html" />
     
     
-    <link rel="prev" href="../lab0/modelsim.html" />
+    <link rel="prev" href="introduction.html" />
     
 
     </head>
@@ -233,7 +233,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="introduction.html">
+        <li class="chapter " data-level="1.3" data-path="introduction.html">
             
                 <a href="introduction.html">
             
@@ -247,7 +247,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="sec_1.html">
+        <li class="chapter active" data-level="1.3.1" data-path="sec_1.html">
             
                 <a href="sec_1.html">
             
@@ -444,7 +444,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LAB1: "施法"让 CPU 动起来</a>
+        <a href=".." >RTL设计</a>
     </h1>
 </div>
 
@@ -459,9 +459,91 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lab1-&#x65BD;&#x6CD5;&#x8BA9;-cpu-&#x52A8;&#x8D77;&#x6765;">LAB1: &quot;&#x65BD;&#x6CD5;&quot;&#x8BA9; CPU &#x52A8;&#x8D77;&#x6765;</h1>
+                                <h2 id="rtl&#x8BBE;&#x8BA1;">RTL&#x8BBE;&#x8BA1;</h2>
+<p>&#x4E0B;&#x56FE;&#x5C55;&#x793A;&#x4E86;&#x672C;&#x8282;&#x5C06;&#x5B9E;&#x73B0;&#x7684; SoC.</p>
+<p><img src="../img/lab1/01.png" alt="01" style="zoom:100%;"></p>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#x7684; SoC, &#x5728;&#x5DF2;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x57FA;&#x7840;&#x4E0A;, &#x603B;&#x5171;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x7684;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;:</p>
+<ul>
+<li><p>&#x4FEE;&#x6539;&#x603B;&#x7EBF;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x8BD1;&#x7801;&#x6A21;&#x5757;, &#x4F7F;&#x5176;&#x80FD;&#x5BF9; BRAM &#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x6B63;&#x786E;&#x7684;&#x8BD1;&#x7801;.</p>
+</li>
+<li><p>&#x5728;&#x9876;&#x5C42;&#x6587;&#x4EF6;&#x4E2D;&#x5C06; RAMCODE &#x603B;&#x7EBF;&#x63A5;&#x53E3;&#x4E0E;&#x603B;&#x7EBF;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x8FDE;&#x63A5;.</p>
+</li>
+</ul>
 <!-- -->
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" id="&#x5173;&#x4E8E;&#x672C;&#x4E66;&#x7684;&#x914D;&#x5957;&#x4EE3;&#x7801;"><i class="fa fa-bullhorn"></i> &#x5173;&#x4E8E;&#x672C;&#x4E66;&#x7684;&#x914D;&#x5957;&#x4EE3;&#x7801;</h3></div><div class="panel-body"><p>&#x672C;&#x4E66;&#x63D0;&#x4F9B;&#x7684;&#x4EE3;&#x7801;&#x5DE5;&#x7A0B;&#x540D;&#x4E3A; &quot;CortexM0_SoC&quot; , &#x4ECE;&#x672C;&#x5B9E;&#x9A8C;&#x5F00;&#x59CB;, &#x6309;&#x5B9E;&#x9A8C;&#x987A;&#x5E8F;&#x8BBE;&#x6709; Task1-4.</p></div></div>
+<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="&#x4EC0;&#x4E48;-&#x4F60;&#x60F3;&#x81EA;&#x5DF1;&#x9020;&#x8F6E;&#x5B50;"><i class="fa fa-lightbulb-o"></i> &#x4EC0;&#x4E48;? &#x4F60;&#x60F3;&#x81EA;&#x5DF1;&#x9020;&#x8F6E;&#x5B50;?</h3></div><div class="panel-body"><p>&#x672C;&#x5B9E;&#x9A8C;&#x53EA;&#x4F1A;&#x6559;&#x4F60;&#x57FA;&#x4E8E;&#x73B0;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x57FA;&#x7840;&#x6539;&#x8FDB;&#x5B9E;&#x73B0; SoC &#x7684;&#x8BBE;&#x8BA1;, &#x5982;&#x679C;&#x4F60;&#x60F3;&#x4ECE;&#x5B8C;&#x5168;&#x7684;&#x88F8;&#x6838;&#x5F00;&#x59CB;&#x8BBE;&#x8BA1;, &#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x603B;&#x7EBF;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x7684;&#x8BBE;&#x8BA1; (&#x5728;&#x5B9E;&#x9A8C;&#x6307;&#x5BFC;&#x4E66;&#x7B2C;&#x4E09;&#x7AE0;&#x4E2D;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;) , &#x5B9E;&#x73B0;&#x5B8C;&#x603B;&#x7EBF;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x540E;,&#x5411;SoC&#x4E2D;&#x6DFB;&#x52A0;&#x5B58;&#x50A8;&#x6307;&#x4EE4;&#x7684; RAM (RAMCODE) , &#x4E4B;&#x540E;&#x518D;&#x6DFB;&#x52A0;&#x5176;&#x4ED6;&#x5916;&#x8BBE;&#x5373;&#x53EF;.</p></div></div>
+<p> &#x672C;&#x4E66;&#x63D0;&#x4F9B;&#x7684;&#x4EE3;&#x7801;&#x5DE5;&#x7A0B;&#x540D;&#x4E3A;&quot;CortexM0_SoC&quot;, &#x4ECE;&#x672C;&#x5B9E;&#x9A8C;&#x5F00;&#x59CB;, &#x6309;&#x987A;&#x5E8F;&#x5C06;&#x5B9E;&#x9A8C;&#x6807;&#x8BB0;&#x4E3A;Task1-4.</p>
+<p>&#x9996;&#x5148;, &#x5728; &quot;CortexM0_SoC/Task1/rtl/AHBlite_Decoder.v&quot; &#x6587;&#x4EF6;&#x4E2D;&#x4FEE;&#x6539;&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x6A21;&#x5757;&#x4EE3;&#x7801;.</p>
+<ul>
+<li><p>&#x5728;&#x7AEF;&#x53E3;&#x53C2;&#x6570;&#x90E8;&#x5206;, &#x4EE4;RAMCODE&#x4F7F;&#x80FD;&#x6709;&#x6548;.</p>
+<pre><code class="lang-verilog"><span class="hljs-comment">/*RAMCODE enable parameter*/</span>
+<span class="hljs-keyword">parameter</span> Port0_en = <span class="hljs-number">0</span>,
+<span class="hljs-comment">/************************/</span>
+</code></pre>
+<p>&#x6539;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-verilog"><span class="hljs-comment">/*RAMCODE enable parameter*/</span>
+<span class="hljs-keyword">parameter</span> Port0_en = <span class="hljs-number">1</span>,
+<span class="hljs-comment">/************************/</span>
+</code></pre>
+</li>
+<li><p>&#x6839;&#x636E;&#x7B2C;&#x4E8C;&#x7AE0;&#x6240;&#x8FF0;&#x7684; memory map, Cortex-M0 &#x624B;&#x518C;&#x63A8;&#x8350; ROM &#x8D77;&#x59CB;&#x5730;&#x5740;&#x5206;&#x914D;&#x4E3A; 0x00000000, &#x6240;&#x4EE5; RAMCODE &#x7684;&#x5730;&#x5740;&#x7F16;&#x7801;&#x4E3A;0x00000000-0x0000ffff, &#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x4E00;&#x6B21;&#x603B;&#x7EBF;&#x64CD;&#x4F5C;, &#x53EA;&#x8981;&#x5730;&#x5740;&#x603B;&#x7EBF;&#x7684;&#x9AD8;16&#x4F4D;&#x5168;&#x4E3A;0 (&#x603B;&#x7EBF;&#x64CD;&#x4F5C;&#x7684;&#x5730;&#x5740;&#x4E3A;0x0000xxxx, x&#x5728;&#x6B64;&#x5904;&#x8868;&#x793A;&#x65E0;&#x8BBA;&#x8BE5;&#x4F4D;&#x4E3A;0-f&#x7684;&#x4EFB;&#x4F55;&#x503C;, &#x53EA;&#x8981;&#x9AD8;16&#x4F4D;&#x5168;&#x4E3A;0, &#x90FD;&#x4E0D;&#x5F71;&#x54CD;&#x603B;&#x7EBF;&#x7684;&#x8BD1;&#x7801;&#x7ED3;&#x679C;), &#x5219;&#x8BD1;&#x7801;&#x6A21;&#x5757;&#x8BA4;&#x4E3A;&#x8FD9;&#x662F;&#x4E00;&#x6B21;&#x5BF9;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;&#x7684;&#x64CD;&#x4F5C;, &#x8FDB;&#x800C;&#x751F;&#x6210;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;&#x603B;&#x7EBF;&#x9009;&#x62E9;&#x4FE1;&#x53F7;. &#x56E0;&#x6B64;, &#x5730;&#x5740;&#x8BD1;&#x7801;&#x903B;&#x8F91;&#x53EA;&#x9700;&#x8981;&#x5BF9;&#x5730;&#x5740;&#x7684;&#x9AD8;16&#x4F4D;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x5373;&#x53EF;. &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x8BD1;&#x7801;&#x6A21;&#x5757;&#x63D2;&#x5165; RAMCODE &#x6709;&#x5173;&#x7684;&#x8BD1;&#x7801;&#x903B;&#x8F91;. </p>
+<pre><code class="lang-verilog"><span class="hljs-comment">//0x00000000-0x0000ffff</span>
+<span class="hljs-comment">/*Insert RAMCODE decoder code there*/</span>
+<span class="hljs-keyword">assign</span> P0_HSEL = <span class="hljs-number">1</span>&#x2019;b0;
+<span class="hljs-comment">/***********************************/</span>
+</code></pre>
+<p>&#x6539;&#x4E3A;:</p>
+<pre><code class="lang-verilog"><span class="hljs-comment">//0x00000000-0x0000ffff</span>
+<span class="hljs-comment">/*Insert RAMCODE decoder code there*/</span>
+<span class="hljs-keyword">assign</span> P0_HSEL = (HADDR[<span class="hljs-number">31</span>:<span class="hljs-number">16</span>] == <span class="hljs-number">16</span>&apos;h0000) ? Port0_en : <span class="hljs-number">1&apos;b0</span>; 
+<span class="hljs-comment">/***********************************/</span>
+</code></pre>
+<p>&#x4FEE;&#x6539;&#x5B8C;&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x6A21;&#x5757;&#x540E;, &#x9700;&#x8981;&#x5728;&#x9876;&#x5C42;&#x6587;&#x4EF6;(CortexM0SoC.v) &#x4E2D;&#x5C06;RAMCODE&#x603B;&#x7EBF;&#x63A5;&#x53E3;&#x4E0E;&#x603B;&#x7EBF;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x8FDE;&#x63A5;, &#x5C06;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;&#x8FDE;&#x5165;SoC&#x4E2D;&#x3002;
+&#x5728;&#x201C;CortexM0_SoC/Task1/rtl/ CortexM0_SoC.v&#x201D;&#x4E2D;, &#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x5904;&#x7406;&#x5668;&#x6838;&#x3001;&#x603B;&#x7EBF;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x3001;RAMCODE&#x603B;&#x7EBF;&#x63A5;&#x53E3;&#x6A21;&#x5757;&#x4EE5;&#x53CA;Block RAM&#x6A21;&#x5757;&#x7684;&#x4F8B;&#x5316;(&#x8C03;&#x7528;&#x6A21;&#x5757;, &#x5C06;&#x5DF2;&#x6709;&#x6A21;&#x5757;&#x6DFB;&#x52A0;&#x81F3;&#x8BBE;&#x8BA1;&#x4E2D;) , &#x4F46;&#x672A;&#x5728;&#x603B;&#x7EBF;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x63A5;&#x53E3;&#x90E8;&#x5206;&#x8FDE;&#x63A5;RAMCODE&#x603B;&#x7EBF;&#x63A5;&#x53E3;&#x3002;&#x56E0;&#x6B64;, &#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
+<pre><code class="lang-verilog"><span class="hljs-comment">/* Connect to Interconnect Port 0 */</span>
+.HCLK            (clk),
+.HRESETn        (cpuresetn),
+.HSEL            (<span class="hljs-comment">/*Port 0*/</span>),
+.HADDR            (<span class="hljs-comment">/*Port 0*/</span>),
+.HPROT            (<span class="hljs-comment">/*Port 0*/</span>),
+.HSIZE            (<span class="hljs-comment">/*Port 0*/</span>),
+.HTRANS            (<span class="hljs-comment">/*Port 0*/</span>),
+.HWDATA            (<span class="hljs-comment">/*Port 0*/</span>),
+.HWRITE            (<span class="hljs-comment">/*Port 0*/</span>),
+.HRDATA            (<span class="hljs-comment">/*Port 0*/</span>),
+.HREADY            (<span class="hljs-comment">/*Port 0*/</span>),
+.HREADYOUT        (<span class="hljs-comment">/*Port 0*/</span>),
+.HRESP            (<span class="hljs-comment">/*Port 0*/</span>),
+.BRAM_WRADDR    (RAMCODE_WADDR),
+.BRAM_RDADDR    (RAMCODE_RADDR),
+.BRAM_RDATA        (RAMCODE_RDATA),
+.BRAM_WDATA        (RAMCODE_WDATA),
+.BRAM_WRITE        (RAMCODE_WRITE)
+<span class="hljs-comment">/**********************************/</span>
+</code></pre>
+<p>&#x6539;&#x4E3A;:</p>
+<pre><code class="lang-verilog"><span class="hljs-comment">/* Connect to Interconnect Port 0 */</span>
+.HCLK            (clk),
+.HRESETn        (cpuresetn),
+.HSEL            (HSEL_P0),
+.HADDR            (HADDR_P0),
+.HPROT            (HPROT_P0),
+.HSIZE            (HSIZE_P0),
+.HTRANS            (HTRANS_P0),
+.HWDATA            (HWDATA_P0),
+.HWRITE            (HWRITE_P0),
+.HRDATA            (HRDATA_P0),
+.HREADY            (HREADY_P0),
+.HREADYOUT        (HREADYOUT_P0),
+.HRESP            (HRESP_P0),
+.BRAM_WRADDR    (RAMCODE_WADDR),
+.BRAM_RDADDR    (RAMCODE_RADDR),
+.BRAM_RDATA        (RAMCODE_RDATA),
+.BRAM_WDATA        (RAMCODE_WDATA),
+.BRAM_WRITE        (RAMCODE_WRITE)
+<span class="hljs-comment">/**********************************/</span>
+</code></pre>
+</li>
+</ul>
 <footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By Fengrui Liu, &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2021-11-16 14:47:54 </span> </footer>
                                 
                                 </section>
@@ -489,12 +571,12 @@
 
             
                 
-                <a href="../lab0/modelsim.html" class="navigation navigation-prev " aria-label="Previous page: Modelsim">
+                <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page: LAB1: "施法"让 CPU 动起来">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="sec_1.html" class="navigation navigation-next " aria-label="Next page: RTL设计">
+                <a href="../lab2/introduction.html" class="navigation navigation-next " aria-label="Next page: LAB2: "点石成金" - 实现你的首个 SoC">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -505,7 +587,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LAB1: \"施法\"让 CPU 动起来","level":"1.3","depth":1,"next":{"title":"RTL设计","level":"1.3.1","depth":2,"path":"lab1/sec_1.md","ref":"lab1/sec_1.md","articles":[]},"previous":{"title":"Modelsim","level":"1.2.8","depth":2,"path":"lab0/modelsim.md","ref":"lab0/modelsim.md","articles":[]},"dir":"ltr"},"config":{"plugins":["callouts","intopic-toc","page-footer-ex","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2","visible":true},"page-footer-ex":{"copyright":"By Fengrui Liu, 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Guide Book","gitbook":"*"},"file":{"path":"lab1/introduction.md","mtime":"2021-11-16T06:47:54.622Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-16T11:38:32.311Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RTL设计","level":"1.3.1","depth":2,"next":{"title":"LAB2: \"点石成金\" - 实现你的首个 SoC","level":"1.4","depth":1,"path":"lab2/introduction.md","ref":"lab2/introduction.md","articles":[]},"previous":{"title":"LAB1: \"施法\"让 CPU 动起来","level":"1.3","depth":1,"path":"lab1/introduction.md","ref":"lab1/introduction.md","articles":[{"title":"RTL设计","level":"1.3.1","depth":2,"path":"lab1/sec_1.md","ref":"lab1/sec_1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["callouts","intopic-toc","page-footer-ex","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2","visible":true},"page-footer-ex":{"copyright":"By Fengrui Liu, 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Guide Book","gitbook":"*"},"file":{"path":"lab1/sec_1.md","mtime":"2021-11-16T06:47:54.622Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-16T11:38:32.311Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
