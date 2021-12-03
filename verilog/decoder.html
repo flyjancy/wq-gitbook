@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>使能信号 · WQ GitBook</title>
+        <title>总线译码器 · WQ GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="decoder.html" />
+    <link rel="next" href="../faq/introduction.html" />
     
     
-    <link rel="prev" href="grammar.html" />
+    <link rel="prev" href="enable_signal.html" />
     
 
     </head>
@@ -557,7 +557,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7.2" data-path="enable_signal.html">
+        <li class="chapter " data-level="1.7.2" data-path="enable_signal.html">
             
                 <a href="enable_signal.html">
             
@@ -570,7 +570,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="decoder.html">
+        <li class="chapter active" data-level="1.7.3" data-path="decoder.html">
             
                 <a href="decoder.html">
             
@@ -644,7 +644,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >使能信号</a>
+        <a href=".." >总线译码器</a>
     </h1>
 </div>
 
@@ -659,70 +659,143 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;">&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;</h1>
-<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;">&#x4EC0;&#x4E48;&#x662F;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;?</h2>
-<p>&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;(Enable Signal), &#x987E;&#x540D;&#x601D;&#x4E49;, &#x5C31;&#x662F;&#x63A7;&#x5236;&#x67D0;&#x4E2A;&#x7535;&#x8DEF;/&#x82AF;&#x7247;&#x5F00;&#x542F;&#x7684;&#x4FE1;&#x53F7;. &#x6211;&#x4EEC;&#x4EE5; Verilog &#x4E2D;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x591A;&#x8DEF;&#x590D;&#x7528;&#x5668;&#x4E3A;&#x4F8B;, </p>
-<pre><code class="lang-verilog"><span class="hljs-keyword">always</span> @(*)
-    <span class="hljs-keyword">if</span> (!rstn)<span class="hljs-keyword">begin</span>
-        a = <span class="hljs-number">0</span>;
-        b = <span class="hljs-number">0</span>;
-        c = <span class="hljs-number">0</span>;
-        d = <span class="hljs-number">0</span>;
-     <span class="hljs-keyword">end</span>
-     <span class="hljs-keyword">else</span> 
-        <span class="hljs-keyword">case</span>(sel)
-        <span class="hljs-number">2&apos;b00</span>: a = data_in;
-        <span class="hljs-number">2&apos;b01</span>: b = data_in;
-        <span class="hljs-number">2&apos;b10</span>: c = data_in;
-        <span class="hljs-number">2&apos;b11</span>: d = data_in;
-        <span class="hljs-keyword">default</span> :a = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">endcase</span>
+                                <h1 id="&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;">&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;</h1>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;-&#x6709;&#x4EC0;&#x4E48;&#x7528;">&#x4EC0;&#x4E48;&#x662F;&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;? &#x6709;&#x4EC0;&#x4E48;&#x7528;?</h2>
+<p>&#x5047;&#x5982;&#x672C;&#x5B9E;&#x9A8C;&#x96BE;&#x5EA6;&#x592A;&#x5927;, &#x4F60;&#x60F3;&#x8981;&#x548C;&#x81EA;&#x5DF1;&#x7684;&#x670B;&#x53CB;&#x54ED;&#x8BC9;, &#x8FD9;&#x65F6;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x90E8;&#x624B;&#x673A;&#x548C;&#x670B;&#x53CB;&#x7684;&#x7535;&#x8BDD;&#x53F7;, &#x7ED3;&#x679C;&#x5F88;&#x9057;&#x61BE;, &#x4F60;&#x7684;&#x670B;&#x53CB;&#x5E76;&#x6CA1;&#x6709;&#x63A5;&#x4F60;&#x7684;&#x7535;&#x8BDD;, &#x4F60;&#x53EA;&#x80FD;&#x7EE7;&#x7EED;&#x6253;&#x7535;&#x8BDD;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x670B;&#x53CB;. SoC&#x60F3;&#x8981;&#x8BBF;&#x95EE;&#x591A;&#x4E2A;&#x5916;&#x8BBE;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x662F;&#x5982;&#x6B64;. &#x5F53;&#x5904;&#x7406;&#x5668;&#x6838;&#x53EA;&#x6709;&#x4E00;&#x4E2A; Master &#x603B;&#x7EBF;&#x63A5;&#x53E3;&#x65F6;(&#x76F8;&#x5F53;&#x4E8E;&#x53EA;&#x6709;&#x4E00;&#x90E8;&#x624B;&#x673A;&#x7684;&#x65F6;&#x5019;),  &#x6211;&#x4EEC;&#x6B64;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x8BD1;&#x7801;&#x5668;(&#x8FD0;&#x8425;&#x5546;)&#x53D1;&#x6325;&#x4F5C;&#x7528;. &#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x5BF9;&#x5730;&#x5740;&#x603B;&#x7EBF;&#x4E0A;&#x7684;&#x5730;&#x5740;&#x4FE1;&#x53F7;&#x8FDB;&#x884C;&#x8BD1;&#x7801;, &#x4E4B;&#x540E;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x5916;&#x8BBE;&#x7684;&#x9009;&#x62E9;&#x4FE1;&#x53F7;(&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x76F8;&#x5F53;&#x4E8E;&#x62E8;&#x901A;&#x4E86;&#x7535;&#x8BDD;). &#x4F46;&#x662F;&#x9700;&#x8981;&#x6CE8;&#x610F;, &#x6B64;&#x65F6;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x5904;&#x7406;&#x5668;&#x6838;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x5916;&#x8BBE;&#x4E86;, &#x751F;&#x6210;&#x9009;&#x62E9;&#x4FE1;&#x53F7;&#x540E;, &#x9700;&#x8981;&#x5224;&#x65AD;&#x5BF9;&#x5E94;&#x5916;&#x8BBE;&#x7684;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x662F;&#x5426;&#x62C9;&#x9AD8;(&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x670B;&#x53CB;&#x6709;&#x6CA1;&#x6709;&#x6302;&#x4F60;&#x7684;&#x7535;&#x8BDD;), &#x5982;&#x679C;&#x6B64;&#x65F6;&#x4F7F;&#x80FD;&#x6709;&#x6548;, &#x5219;&#x5904;&#x7406;&#x5668;&#x6838;&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x5916;&#x8BBE;&#x4E86;. </p>
+<h2 id="&#x8BD1;&#x7801;&#x5668;&#x7684;&#x5E38;&#x89C1;&#x63CF;&#x8FF0;&#x65B9;&#x6CD5;">&#x8BD1;&#x7801;&#x5668;&#x7684;&#x5E38;&#x89C1;&#x63CF;&#x8FF0;&#x65B9;&#x6CD5;</h2>
+<h3 id="&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x76F4;&#x63A5;&#x8D4B;&#x503C;">&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x76F4;&#x63A5;&#x8D4B;&#x503C;</h3>
+<p>&#x4EE5;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684; 3-8 &#x8BD1;&#x7801;&#x5668;&#x4E3A;&#x4F8B;, &#x6211;&#x4EEC;&#x5148;&#x753B;&#x51FA;&#x5B83;&#x7684;&#x771F;&#x503C;&#x8868;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8F93;&#x5165;</th>
+<th>&#x8F93;&#x51FA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A    B     C</td>
+<td>Y0  Y1  Y2  Y3  Y4  Y5  Y6  Y7</td>
+</tr>
+<tr>
+<td>0    0     0</td>
+<td>1    0     0    0    0    0    0    0</td>
+</tr>
+<tr>
+<td>0    0     1</td>
+<td>0    1     0    0    0    0    0    0</td>
+</tr>
+<tr>
+<td>0    1     0</td>
+<td>0    0     1    0    0    0    0    0</td>
+</tr>
+<tr>
+<td>0    1     1</td>
+<td>0    0     0    1    0    0    0    0</td>
+</tr>
+<tr>
+<td>1    0     0</td>
+<td>0    0     0    0    1    0    0    0</td>
+</tr>
+<tr>
+<td>1    0     1</td>
+<td>0    0     0    0    0    1    0    0</td>
+</tr>
+<tr>
+<td>1    1     0</td>
+<td>0    0     0    0    0    0    1    0</td>
+</tr>
+<tr>
+<td>1    1     1</td>
+<td>0    0     0    0    0    0    0    1</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6839;&#x636E;&#x771F;&#x503C;&#x8868;, &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F97;&#x51FA;&#x8F93;&#x51FA;&#x7684;&#x903B;&#x8F91;&#x8868;&#x8FBE;&#x5F0F;. &#x5229;&#x7528; assign &#x8BED;&#x53E5;, &#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x5BF9;&#x5E94;&#x7684; Verilog &#x4EE3;&#x7801;.</p>
+<pre><code class="lang-verilog"><span class="hljs-keyword">module</span> decoder3t8(
+    <span class="hljs-keyword">input</span> a, b,c,
+    <span class="hljs-keyword">output</span> yo, yl, y2, y3, y4, y5,y6, y7
+) ;
+    <span class="hljs-keyword">assign</span> y0 = ~a &amp;~b&amp;~c ;
+    <span class="hljs-keyword">assign</span> y1=~a &amp;~b&amp;c;
+    <span class="hljs-keyword">assign</span> y2= ~a &amp;b&amp; ~c;
+    <span class="hljs-keyword">assign</span> y3= ~a &amp;b &amp;c;
+    <span class="hljs-keyword">assign</span> y4=a &amp;~b&amp;~c;
+    <span class="hljs-keyword">assign</span> y5=a &amp;~b&amp;c ;
+    <span class="hljs-keyword">assign</span> y6 =a &amp;b&amp;~c;
+    <span class="hljs-keyword">assign</span> y7 =a &amp;b&amp;c;
+    <span class="hljs-keyword">endmodule</span>
 </code></pre>
-<p>&#x5728;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x4E2D;, rstn &#x4E3A;&#x6211;&#x4EEC;&#x7684;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;. &#x5F53;&#x5B83;&#x4E3A; 0 &#x7684;&#x65F6;&#x5019;, &#x6A21;&#x5757;&#x5185;&#x90E8;&#x7684; a, b, c, d &#x5747;&#x4E3A; 0. &#x4E5F;&#x5C31;&#x662F;&#x8BF4;, &#x53EA;&#x8981; rstn &#x4E3A; 0 &#x65F6;, &#x4E0D;&#x7BA1;&#x8F93;&#x5165;&#x600E;&#x4E48;&#x53D8;&#x5316; &#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x5747;&#x4E3A; 0. &#x6B64;&#x65F6;, &#x6574;&#x4E2A;&#x6A21;&#x5757;&#x4E0D;&#x5DE5;&#x4F5C;. </p>
-<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x6A21;&#x5757;">&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x6A21;&#x5757;?</h2>
-<p>&#x8FD8;&#x662F;&#x4EE5;&#x4E0A;&#x4E2A;&#x6A21;&#x5757;&#x4E3A;&#x4F8B;, &#x6211;&#x4EEC;&#x5728; vivado &#x4E0A;&#x7EFC;&#x5408;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;, &#x5F97;&#x5230; RTL &#x7535;&#x8DEF;&#x56FE;. &#x5982;&#x4E0B;&#x56FE;&#x4E3A;&#x4F8B;:</p>
-<p><div align="center"><img src="../img/verilog/01.png" alt="&#x7535;&#x8DEF;&#x56FE;" style="zoom:120%;"><div align="center"></div></div></p>
-<center style="color:#000000;font-size:10pt;">&#x7535;&#x8DEF;&#x56FE;</center>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x7B80;&#x5355;&#x7684;&#x8BD1;&#x7801;&#x5668;, &#x5982;&#x679C;&#x8BD1;&#x7801;&#x5668;&#x4F4D;&#x6570;&#x8FC7;&#x591A;, &#x4F1A;&#x5F88;&#x7E41;&#x7410;.</p>
+<h3 id="&#x4F7F;&#x7528;-if-else-&#x8BED;&#x53E5;">&#x4F7F;&#x7528; if-else &#x8BED;&#x53E5;</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97;&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x8868;&#x8FBE;&#x5F0F;&#x8F93;&#x51FA;&#x5F88;&#x9EBB;&#x70E6;, &#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x8BED;&#x8A00;&#x6765;&#x7F16;&#x5199;&#x8BD1;&#x7801;&#x5668;. &#x4F7F;&#x7528; if-else &#x8BED;&#x53E5;&#x63CF;&#x8FF0;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;, &#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8BD1;&#x7801;&#x5668;. &#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x4EE5; 3-8 &#x8BD1;&#x7801;&#x5668;&#x4E3A;&#x4F8B;, </p>
+<pre><code class="lang-verilog"><span class="hljs-keyword">module</span> decoder38if(
+    <span class="hljs-keyword">input</span>[<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] a,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] y
+);
+    <span class="hljs-keyword">always</span>@ (*)<span class="hljs-keyword">begin</span>
+        y= <span class="hljs-number">8&apos;b0</span>;
 
-<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;, rstn &#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x5668;&#x548C;&#x4E00;&#x4E2A;&#x67E5;&#x627E;&#x8868;(&#x5728;&#x8FD9;&#x91CC;&#x5B9E;&#x73B0;&#x53CD;&#x76F8;&#x5668;&#x7684;&#x529F;&#x80FD;)&#x540E;, &#x53C8;&#x8FDE;&#x63A5;&#x5230;&#x5404;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6E05;&#x96F6;&#x7AEF;. &#x6240;&#x4EE5;&#x5982;&#x679C;&#x4E0D;&#x6EE1;&#x8DB3; rstn = 1 &#x7684;&#x6761;&#x4EF6;&#x7684;&#x8BDD;, &#x65E0;&#x8BBA;&#x8F93;&#x5165;&#x662F;&#x4EC0;&#x4E48;, &#x8F93;&#x51FA;&#x5747;&#x4E0D;&#x4F1A;&#x53D8;&#x5316;. &#x6574;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x9009;&#x62E9;&#x529F;&#x80FD;&#x5931;&#x6548;.</p>
-<div class="panel panel-success"><div class="panel-heading"><h5 class="panel-title" id="&#x4EC0;&#x4E48;&#x662F;-lut-&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x91CC;&#x7684;-lut-&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x53CD;&#x76F8;&#x5668;"><i class="fa fa-lightbulb-o"></i> &#x4EC0;&#x4E48;&#x662F; LUT? &#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x91CC;&#x7684; LUT &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x53CD;&#x76F8;&#x5668;?</h5></div><div class="panel-body"><p>LUT &#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x7406;&#x89E3;&#x4E3A;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x5355;&#x5143;, &#x5177;&#x4F53;&#x8BF7;&#x89C1;<a href="lab0/FPGAintro.md">FPGA &#x7B80;&#x4ECB;</a>&#x4E2D;FPGA&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x90E8;&#x5206;.</p><p>LUT &#x5B9E;&#x73B0;&#x53CD;&#x76F8;&#x5668;&#x7684;&#x539F;&#x7406;&#x4E3A;: &#x5229;&#x7528;&#x8F93;&#x5165;&#x4F5C;&#x4E3A;&#x5730;&#x5740;, &#x5F53;&#x5730;&#x5740;&#x4E3A; 0 &#x65F6;, &#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x4E3A; 1, &#x5F53;&#x5730;&#x5740;&#x4E3A; 1 &#x65F6;, &#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x4E3A; 0.</p></div></div>
-<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;">&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;?</h3>
-<p>&#x9700;&#x8981;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x7684;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x5927;&#x578B;&#x7684;&#x6570;&#x5B57;&#x7CFB;&#x7EDF;&#x4E2D;, &#x901A;&#x5E38;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x6A21;&#x5757;&#x914D;&#x5408;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x529F;&#x80FD;. &#x4F46;&#x662F;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x5E76;&#x4E0D;&#x662F;&#x6BCF;&#x65F6;&#x6BCF;&#x523B;&#x90FD;&#x5728;&#x5DE5;&#x4F5C;, &#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x6765;&#x63A7;&#x5236;&#x54EA;&#x4E9B;&#x6A21;&#x5757;&#x5E94;&#x8BE5;&#x5DE5;&#x4F5C;.</p>
-<p>&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x4EE5;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4E3A;&#x4F8B;. &#x5047;&#x5982;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x9700;&#x8981;&#x4E00;&#x4E2A; 3 &#x4F4D;&#x7684;&#x9009;&#x62E9;&#x5668;, &#x5982;&#x679C;&#x5229;&#x7528;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x7F16;&#x5199;&#x597D;&#x7684;&#x6A21;&#x5757;&#x7684;&#x8BDD;, &#x5219;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x5B9E;&#x73B0;. </p>
-<ul>
-<li><p>&#x9996;&#x5148;, &#x521B;&#x5EFA;&#x9876;&#x5C42;, &#x5E76;&#x4F8B;&#x5316;mux&#x6A21;&#x5757;:</p>
-<pre><code class="lang-Verilog"> mux u1(
-    .sel (sel[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>]),
-    .data_in (data_in),
-    .rstn (sel[<span class="hljs-number">2</span>]),
-    .a (a),
-    .b (b),
-    .c (c),
-    .d (d)
-    );
-    <span class="hljs-keyword">wire</span> sel2_n;
-    <span class="hljs-keyword">assign</span> sel2_n = ~sel[<span class="hljs-number">2</span>];
-
-    mux u2(
-    .sel (sel[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>]),
-    .data_in (data_in),
-    .rstn (sel2_n),
-    .a (e),
-    .b (f),
-    .c (g),
-    .d (h)
-    );
+        <span class="hljs-keyword">if</span>(a [<span class="hljs-number">2</span>])
+        <span class="hljs-keyword">begin</span>
+            <span class="hljs-keyword">if</span>(a[<span class="hljs-number">1</span>])
+            <span class="hljs-keyword">begin</span>
+                <span class="hljs-keyword">if</span>(a [<span class="hljs-number">0</span>]) y[<span class="hljs-number">7</span>] = <span class="hljs-number">1&apos;b1</span>;
+                <span class="hljs-keyword">else</span> y[<span class="hljs-number">6</span>] = <span class="hljs-number">1&apos;b1</span>;
+            <span class="hljs-keyword">end</span>
+            <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">begin</span>
+                <span class="hljs-keyword">if</span>(a[<span class="hljs-number">0</span>]) y[<span class="hljs-number">5</span>] = <span class="hljs-number">1&apos;b1</span>;
+                <span class="hljs-keyword">else</span> y[<span class="hljs-number">4</span>]= <span class="hljs-number">1&apos;b1</span>;
+            <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">begin</span>
+            <span class="hljs-keyword">if</span>(a[<span class="hljs-number">1</span>])
+            <span class="hljs-keyword">begin</span>
+                <span class="hljs-keyword">if</span>( a[<span class="hljs-number">0</span>]) y[<span class="hljs-number">3</span>]= <span class="hljs-number">1&apos;b1</span>;
+                <span class="hljs-keyword">else</span> y[<span class="hljs-number">2</span>]= <span class="hljs-number">1&apos;b1</span>;
+            <span class="hljs-keyword">end</span>
+            <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">begin</span>
+                <span class="hljs-keyword">if</span>(a[<span class="hljs-number">0</span>]) y[<span class="hljs-number">1</span>]= <span class="hljs-number">1</span>&apos;bl;
+                <span class="hljs-keyword">else</span> y[<span class="hljs-number">0</span>]= <span class="hljs-number">1&apos;b1</span>;
+            <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
 </code></pre>
-</li>
-<li><p>&#x7EFC;&#x5408;&#x9876;&#x5C42;&#x6587;&#x4EF6;&#x4E4B;&#x540E;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4F8B;&#x5316;&#x4E4B;&#x540E;&#x7684;&#x7535;&#x8DEF;&#x56FE;:</p>
-</li>
-</ul>
-<p><div align="center"><img src="../img/verilog/02.png" alt="&#x7535;&#x8DEF;&#x56FE;" style="zoom:120%;"><div align="center"></div></div></p>
-<center style="color:#000000;font-size:10pt;">&#x7535;&#x8DEF;&#x56FE;</center>
+<p>&#x4E0A;&#x9762;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;</p>
+<h3 id="&#x4F7F;&#x7528;-case-&#x8BED;&#x53E5;">&#x4F7F;&#x7528; case &#x8BED;&#x53E5;</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97; if-else &#x8BED;&#x53E5;&#x8FD8;&#x662F;&#x4E0D;&#x591F;&#x76F4;&#x89C2;, &#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; case &#x8BED;&#x53E5;&#x6765;&#x7F16;&#x5199;&#x8BD1;&#x7801;&#x5668;. &#x4ECD;&#x7136;&#x4EE5; 3-8 &#x8BD1;&#x7801;&#x5668;&#x4E3A;&#x4F8B;</p>
+<pre><code class="lang-verilog">module dec38case(
+    input [2:0] a,
+    output reg [7:0] y
+) ;
+    always(*)
+    begin
+        case(a)
+            7: y = 8&apos;b1000_0000;
+            6: y = 8&apos;b0100_0000;
+            5: y = 8&apos;b0010_0000;
+            4: y = 8&apos;b0001_0000;
+            3: y = 8&apos;b0000_1000;
+            2: y = 8&apos;b0000_0100;
+            1: y = 8&apos;b0000_0010;
+            o: y = 8&apos;b0000_0001;
+            default: y = 8&quot; bxxxx_xxxx
+        endcase
+    end
+endmodule
+</code></pre>
+<h2 id="&#x672C;&#x5B9E;&#x9A8C;&#x4E2D;&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;&#x7684;&#x63CF;&#x8FF0;&#x65B9;&#x6CD5;">&#x672C;&#x5B9E;&#x9A8C;&#x4E2D;&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;&#x7684;&#x63CF;&#x8FF0;&#x65B9;&#x6CD5;</h2>
+<p>&#x6211;&#x4EEC;&#x5148;&#x4EE5;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x770B;&#x672C;&#x6B21;&#x5B9E;&#x9A8C;&#x9700;&#x8981;&#x600E;&#x6837;&#x7684;&#x8BD1;&#x7801;&#x5668;.</p>
+<p><div align="center"><img src="../img/lab3/01.png" alt="SoC&#x7ED3;&#x6784;&#x56FE;" style="zoom:120%;"><div align="center"></div></div></p>
+<center style="color:#000000;font-size:10pt;">&#x5B9E;&#x9A8C;&#x4E09;SoC&#x7ED3;&#x6784;&#x56FE;</center>
 
-<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;, sel2 &#x8FDE;&#x63A5;&#x5230;&#x4E86;&#x4E24;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x80FD;&#x7AEF;, &#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x4E0A;&#x5C06; 3bit &#x7684;&#x6570;&#x636E;&#x5206;&#x6210;&#x4E86;&#x4E24;&#x6BB5;, &#x5176;&#x4E2D;&#x4E00;&#x6BB5;&#x4ECE; 000 &#x5230; 011, &#x53E6;&#x5916;&#x4E00;&#x6BB5;&#x4ECE; 100 &#x5230; 111. &#x6B64;&#x65F6;&#x5982;&#x679C; sel0 sel1 &#x8F93;&#x5165;&#x4E3A; 11 &#x65F6;, &#x5047;&#x8BBE; sel2 &#x8F93;&#x5165;&#x4E3A; 0, &#x6B64;&#x65F6; u1 &#x6A21;&#x5757;&#x542F;&#x52A8;, u2 &#x6A21;&#x5757;&#x672A;&#x88AB;&#x542F;&#x52A8;, &#x6240;&#x4EE5;&#x6B64;&#x65F6; u1 &#x6A21;&#x5757;&#x7684;&#x6700;&#x9AD8;&#x4F4D;&#x8F93;&#x51FA;. &#x8FD9;&#x6837;&#x76F8;&#x5F53;&#x4E8E;&#x8F93;&#x5165;&#x4E3A; 011&#x65F6;, d &#x88AB;&#x9009;&#x62E9;&#x8F93;&#x51FA;; &#x5047;&#x8BBE; sel2 &#x8F93;&#x5165;&#x4E3A; 1 &#x65F6;, u1 &#x6A21;&#x5757;&#x5173;&#x95ED;, u2 &#x6A21;&#x5757;&#x542F;&#x52A8;, u2&#x6A21;&#x5757;&#x6700;&#x9AD8;&#x4F4D;&#x8F93;&#x51FA;. &#x76F8;&#x5F53;&#x4E8E;&#x8F93;&#x5165;&#x4E3A; 111&#x65F6;, h &#x88AB;&#x9009;&#x62E9;&#x8F93;&#x51FA;.</p>
-<h3 id="&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x8FD8;&#x6709;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;">&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x8FD8;&#x6709;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;?</h3>
-<p>&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x7684;&#x7528;&#x9014;&#x975E;&#x5E38;&#x5E7F;&#x6CDB;, &#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5B58;&#x50A8;&#x82AF;&#x7247;&#x9009;&#x901A;&#x4FE1;&#x53F7;, &#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x63A7;&#x5236;&#x4FE1;&#x53F7;. &#x4F46;&#x6838;&#x5FC3;&#x7684;&#x4E00;&#x70B9;&#x5C31;&#x662F;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x63A7;&#x5236;&#x4E86;&#x82AF;&#x7247;&#x7684;&#x529F;&#x80FD;&#x662F;&#x5426;&#x80FD;&#x88AB;&#x6B63;&#x5E38;&#x7684;&#x542F;&#x7528;. &#x5728;&#x672C;&#x6B21;&#x5B9E;&#x9A8C;&#x4E2D;, &#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x66F4;&#x591A;&#x7684;&#x89C1;&#x5230;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x7684;&#x4F5C;&#x7528;.</p>
+<p>&#x4E0A;&#x56FE;&#x662F;<a href="lab3/introduction.md">LAB3: &quot;&#x706F;, &#x7B49;&#x706F;, &#x7B49;&#x706F;&quot;-&#x6D41;&#x6C34;&#x706F;&#x7684;&#x51E0;&#x79CD;&#x70B9;&#x6CD5;</a>&#x4E2D;&#x5B9E;&#x73B0;&#x7684;SoC, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;,  SoC &#x7684;&#x603B;&#x7EBF;&#x4E0A;&#x5916;&#x6302;&#x4E86;&#x56DB;&#x4E2A;&#x5916;&#x8BBE;, &#x5206;&#x522B;&#x4E3A;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;(RAMCODE), &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5668;(RAMDATA), &#x901A;&#x8FC7;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x53E3;(GPIO)&#x4EE5;&#x53CA;&#x6D41;&#x6C34;&#x706F;(WATERLIGHT). &#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;&#x7684;&#x5730;&#x5740;&#x4E3A; 0x00000000 - 0x000000ff, &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5668;&#x7684;&#x5730;&#x5740;&#x4E3A;0x20000000 - 0x2000ffff, GPIO &#x7684;&#x5730;&#x5740;&#x4E3A; 0x40000020, 0x40000024 &#x548C; 0x40000028, &#x6D41;&#x6C34;&#x706F;&#x7684;&#x5730;&#x5740;&#x4E3A; 0x40000000 - 0x4000000f. &#x4ECE;&#x5730;&#x5740;&#x4E0A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;, &#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5BF9;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;, &#x53EA;&#x8981;&#x4FDD;&#x8BC1;&#x5730;&#x5740;&#x7684;&#x9AD8; 16bit &#x4E3A; 0x0000 &#x5373;&#x53EF;. &#x4F46;&#x662F;, &#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5BF9;&#x6D41;&#x6C34;&#x706F;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;, &#x5219;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x5730;&#x5740;&#x7EBF;&#x7684;&#x9AD8; 28bit &#x4E3A; 0x4000000. &#x53EF;&#x4EE5;&#x770B;&#x5230;, &#x5BF9;&#x4E0D;&#x540C;&#x5916;&#x8BBE;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x65F6;, &#x7531;&#x4E8E;&#x5916;&#x8BBE;&#x7684;&#x6709;&#x6548;&#x5730;&#x5740;&#x957F;&#x5EA6;&#x4E0D;&#x540C;(&#x5982;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;&#x7684;&#x6709;&#x6548;&#x957F;&#x5EA6;&#x4E3A; 0x0000 - 0xffff, &#x800C;&#x6D41;&#x6C34;&#x706F;&#x7684;&#x6709;&#x6548;&#x957F;&#x5EA6;&#x4E3A;0x0 - 0xf), &#x6240;&#x4EE5;, &#x4E4B;&#x524D;&#x63D0;&#x5230;&#x7684;&#x51E0;&#x79CD;&#x8BD1;&#x7801;&#x5668;&#x7684;&#x63CF;&#x8FF0;&#x65B9;&#x5F0F;&#x5747;&#x4E0D;&#x662F;&#x5F88;&#x9002;&#x5408;&#x672C;&#x5B9E;&#x9A8C;&#x7684;&#x8BD1;&#x7801;&#x5668;&#x8BBE;&#x8BA1;. &#x6240;&#x4EE5;, &#x672C;&#x5B9E;&#x9A8C;&#x4E2D;&#x8BD1;&#x7801;&#x5668;&#x7684;&#x8BBE;&#x8BA1;&#x91C7;&#x7528;&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x65B9;&#x5F0F;, &#x7528;&#x6765;&#x89E3;&#x51B3;&#x9700;&#x8981;&#x8BD1;&#x7801;&#x7684;&#x5BBD;&#x5EA6;&#x53D8;&#x5316;&#x7684;&#x95EE;&#x9898;. 
+&#x5728;&#x9644;&#x5F55;&#x7684;&#x7B2C;&#x4E00;&#x90E8;&#x5206;<a href="grammar.html">Verilog HDL&#x57FA;&#x672C;&#x8BED;&#x6CD5;</a>&#x4E2D;, &#x6211;&#x4EEC;&#x8BB2;&#x5230;&#x4E86;&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;. &#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x65B9;&#x6CD5;&#x5373;&#x4E3A;&#x4F7F;&#x7528;&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26; ?: &#x8FDB;&#x884C;&#x8BD1;&#x7801;. &#x5728; ? &#x540E;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x5199;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x7684;&#x5916;&#x8BBE;&#x7684;&#x5730;&#x5740;, : &#x540E;&#x5219;&#x4E3A;&#x5BF9;&#x5E94;&#x5916;&#x8BBE;&#x7684;&#x4F7F;&#x80FD;&#x7AEF;. &#x8FD9;&#x6837;&#x63CF;&#x8FF0;&#x8BD1;&#x7801;&#x5668;&#x53EA;&#x4F7F;&#x7528;&#x4E86; assign &#x8BED;&#x53E5;, &#x7B80;&#x5355;&#x76F4;&#x89C2;, &#x540C;&#x65F6;&#x907F;&#x514D;&#x4E86;&#x4F7F;&#x7528; always &#x8BED;&#x53E5;&#x63CF;&#x8FF0;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x65F6;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x7684;&#x6BDB;&#x523A;&#x7B49;&#x95EE;&#x9898;. &#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x4E3E;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x4F8B;&#x5B50;&#x6765;&#x770B;&#x600E;&#x6837;&#x4F7F;&#x7528;.
+<code>verilog</code></p>
 <footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By UESTC Intelligent Chip and System Design Lab. &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2021-12-03 23:57:52 </span> </footer>
                                 
                                 </section>
@@ -750,12 +823,12 @@
 
             
                 
-                <a href="grammar.html" class="navigation navigation-prev " aria-label="Previous page: Verilog基本语法">
+                <a href="enable_signal.html" class="navigation navigation-prev " aria-label="Previous page: 使能信号">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="decoder.html" class="navigation navigation-next " aria-label="Next page: 总线译码器">
+                <a href="../faq/introduction.html" class="navigation navigation-next " aria-label="Next page: 常见问题">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -766,7 +839,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"使能信号","level":"1.7.2","depth":2,"next":{"title":"总线译码器","level":"1.7.3","depth":2,"path":"verilog/decoder.md","ref":"verilog/decoder.md","articles":[]},"previous":{"title":"Verilog基本语法","level":"1.7.1","depth":2,"path":"verilog/grammar.md","ref":"verilog/grammar.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","callouts","page-footer-ex","-livereload","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","visible":true},"page-footer-ex":{"copyright":"By UESTC Intelligent Chip and System Design Lab. 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WQ GitBook","gitbook":"*"},"file":{"path":"verilog/enable_signal.md","mtime":"2021-12-03T15:57:52.463Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-03T16:01:08.935Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"总线译码器","level":"1.7.3","depth":2,"next":{"title":"常见问题","level":"1.8","depth":1,"path":"faq/introduction.md","ref":"faq/introduction.md","articles":[]},"previous":{"title":"使能信号","level":"1.7.2","depth":2,"path":"verilog/enable_signal.md","ref":"verilog/enable_signal.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","callouts","page-footer-ex","-livereload","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","visible":true},"page-footer-ex":{"copyright":"By UESTC Intelligent Chip and System Design Lab. 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WQ GitBook","gitbook":"*"},"file":{"path":"verilog/decoder.md","mtime":"2021-12-03T15:57:52.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-03T16:01:08.935Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
