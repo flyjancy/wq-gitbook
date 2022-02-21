@@ -428,20 +428,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../lab3/background.html">
-            
-                <a href="../lab3/background.html">
-            
-                    
-                    背景知识介绍
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="../lab3/data_storage.html">
+        <li class="chapter " data-level="1.5.1" data-path="../lab3/data_storage.html">
             
                 <a href="../lab3/data_storage.html">
             
@@ -454,7 +441,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../lab3/GPIO.html">
+        <li class="chapter " data-level="1.5.2" data-path="../lab3/GPIO.html">
             
                 <a href="../lab3/GPIO.html">
             
@@ -467,25 +454,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../lab3/WaterLight.html">
+        <li class="chapter " data-level="1.5.3" data-path="../lab3/WaterLight.html">
             
                 <a href="../lab3/WaterLight.html">
             
                     
                     硬件流水灯
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.5" data-path="../lab3/conclusion.html">
-            
-                <a href="../lab3/conclusion.html">
-            
-                    
-                    本章小结
             
                 </a>
             
@@ -544,19 +518,6 @@
             
                     
                     使用矩阵键盘控制数码管显示
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="../lab4/conclusion.html">
-            
-                <a href="../lab4/conclusion.html">
-            
-                    
-                    本章小结
             
                 </a>
             
@@ -707,46 +668,46 @@
 <table>
 <thead>
 <tr>
-<th>&#x8F93;&#x5165;</th>
-<th>&#x8F93;&#x51FA;</th>
+<th style="text-align:center">&#x8F93;&#x5165;</th>
+<th style="text-align:center">&#x8F93;&#x51FA;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>A    B     C</td>
-<td>Y0  Y1  Y2  Y3  Y4  Y5  Y6  Y7</td>
+<td style="text-align:center">A    B     C</td>
+<td style="text-align:center">Y0 &#x5230; Y7</td>
 </tr>
 <tr>
-<td>0    0     0</td>
-<td>1    0     0    0    0    0    0    0</td>
+<td style="text-align:center">0    0     0</td>
+<td style="text-align:center">1    0     0    0    0    0    0    0</td>
 </tr>
 <tr>
-<td>0    0     1</td>
-<td>0    1     0    0    0    0    0    0</td>
+<td style="text-align:center">0    0     1</td>
+<td style="text-align:center">0    1     0    0    0    0    0    0</td>
 </tr>
 <tr>
-<td>0    1     0</td>
-<td>0    0     1    0    0    0    0    0</td>
+<td style="text-align:center">0    1     0</td>
+<td style="text-align:center">0    0     1    0    0    0    0    0</td>
 </tr>
 <tr>
-<td>0    1     1</td>
-<td>0    0     0    1    0    0    0    0</td>
+<td style="text-align:center">0    1     1</td>
+<td style="text-align:center">0    0     0    1    0    0    0    0</td>
 </tr>
 <tr>
-<td>1    0     0</td>
-<td>0    0     0    0    1    0    0    0</td>
+<td style="text-align:center">1    0     0</td>
+<td style="text-align:center">0    0     0    0    1    0    0    0</td>
 </tr>
 <tr>
-<td>1    0     1</td>
-<td>0    0     0    0    0    1    0    0</td>
+<td style="text-align:center">1    0     1</td>
+<td style="text-align:center">0    0     0    0    0    1    0    0</td>
 </tr>
 <tr>
-<td>1    1     0</td>
-<td>0    0     0    0    0    0    1    0</td>
+<td style="text-align:center">1    1     0</td>
+<td style="text-align:center">0    0     0    0    0    0    1    0</td>
 </tr>
 <tr>
-<td>1    1     1</td>
-<td>0    0     0    0    0    0    0    1</td>
+<td style="text-align:center">1    1     1</td>
+<td style="text-align:center">0    0     0    0    0    0    0    1</td>
 </tr>
 </tbody>
 </table>
@@ -842,7 +803,7 @@ endmodule
 <span class="hljs-keyword">assign</span> P4_HSEL = (HADDR[<span class="hljs-number">31</span>:<span class="hljs-number">4</span>] == <span class="hljs-number">28</span>&apos;h4000002) ? Port4_en : <span class="hljs-number">1&apos;b0</span>;
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x7684;&#x56DB;&#x884C;&#x4EE3;&#x7801;&#x5C55;&#x793A;&#x4E86;&#x672C;&#x6B21;&#x5B9E;&#x9A8C;&#x4E2D;&#x7684;&#x603B;&#x7EBF;&#x8BD1;&#x7801;&#x5668;&#x7684;&#x8BBE;&#x8BA1;&#x65B9;&#x6CD5;. &#x6211;&#x4EEC;&#x4EE5;&#x7B2C;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x4E3A;&#x4F8B;, &#x5982;&#x679C;&#x5730;&#x5740;&#x4F4D;&#x7684;&#x524D; 16 &#x4F4D;&#x4E3A;16&apos;h0000, &#x5219;&#x628A; Port0_en (&#x4E5F;&#x5C31;&#x662F;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;)&#x7684;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x8D4B;&#x7ED9;&#x7247;&#x9009;&#x4FE1;&#x53F7;, &#x4EE3;&#x8868;&#x603B;&#x7EBF;&#x73B0;&#x5728;&#x5BF9;&#x6307;&#x4EE4;&#x5B58;&#x50A8;&#x5668;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;. &#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x662F;&#x540C;&#x7406;.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By UESTC Intelligent Chip and System Design Lab. &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2022-01-14 22:20:17 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By UESTC Intelligent Chip and System Design Lab. &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2022-02-21 13:35:13 </span> </footer>
                                 
                                 </section>
                             
@@ -885,7 +846,7 @@ endmodule
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"总线译码器","level":"1.7.3","depth":2,"next":{"title":"常见问题","level":"1.8","depth":1,"path":"faq/introduction.md","ref":"faq/introduction.md","articles":[]},"previous":{"title":"使能信号","level":"1.7.2","depth":2,"path":"verilog/enable_signal.md","ref":"verilog/enable_signal.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","callouts","page-footer-ex","-livereload","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","visible":true},"page-footer-ex":{"copyright":"By UESTC Intelligent Chip and System Design Lab. 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WQ GitBook","gitbook":"*"},"file":{"path":"verilog/decoder.md","mtime":"2022-01-14T14:20:17.947Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-26T14:16:05.085Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"总线译码器","level":"1.7.3","depth":2,"next":{"title":"常见问题","level":"1.8","depth":1,"path":"faq/introduction.md","ref":"faq/introduction.md","articles":[]},"previous":{"title":"使能信号","level":"1.7.2","depth":2,"path":"verilog/enable_signal.md","ref":"verilog/enable_signal.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","callouts","page-footer-ex","-livereload","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","visible":true},"page-footer-ex":{"copyright":"By UESTC Intelligent Chip and System Design Lab. 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WQ GitBook","gitbook":"*"},"file":{"path":"verilog/decoder.md","mtime":"2022-02-21T05:35:13.299Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-21T06:00:18.378Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
