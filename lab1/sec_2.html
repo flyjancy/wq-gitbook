@@ -286,20 +286,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="sec_4.html">
-            
-                <a href="sec_4.html">
-            
-                    
-                    *汇编进阶-顺序, 分支与循环
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="sec_5.html">
+        <li class="chapter " data-level="1.3.4" data-path="sec_5.html">
             
                 <a href="sec_5.html">
             
@@ -312,25 +299,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="sec_6.html">
+        <li class="chapter " data-level="1.3.5" data-path="sec_6.html">
             
                 <a href="sec_6.html">
             
                     
                     自己动手, 理解函数调用
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="sec_7.html">
-            
-                <a href="sec_7.html">
-            
-                    
-                    *c 与汇编的混合编程
             
                 </a>
             
@@ -402,6 +376,19 @@
             
                     
                     下载比特流到 FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../lab2/sec_5.html">
+            
+                <a href="../lab2/sec_5.html">
+            
+                    
+                    使用 Keil 调试
             
                 </a>
             
@@ -698,8 +685,8 @@
 <h2 id="&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x5904;&#x7406;">&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x5904;&#x7406;</h2>
 <p>&#x4E00;&#x4E2A; Target &#x7ECF;&#x8FC7;&#x7F16;&#x8BD1;&#x94FE;&#x63A5;&#x6700;&#x7EC8;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;, &#x5728; Keil &#x7684; ADS &#x7F16;&#x8BD1;&#x5668;&#x4E0B;, &#x8FD9;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#x4E3A; .axf, &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x5C31;&#x8574;&#x542B;&#x7740;&#x6240;&#x8C13;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x673A;&#x5668;&#x7801;&#x4FE1;&#x606F;.<br>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x8F6F;&#x786C;&#x4EF6;&#x7684;&#x8054;&#x5408;&#x4EFF;&#x771F;, &#x4E5F;&#x5C31;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x628A;&#x8FD9;&#x4E9B;&#x673A;&#x5668;&#x7801;&#x5BFC;&#x5165;&#x5230;&#x786C;&#x4EF6;&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;&#x5185;&#x5B58;&#x91CC;, &#x5728;&#x4E4B;&#x540E;&#x7684;&#x5B9E;&#x9A8C;&#x4E2D;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x77E5;&#x9053;, &#x786C;&#x4EF6;&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;&#x5185;&#x5B58;&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A; Verilog &#x7F16;&#x5199;&#x7684; RAM, &#x5F53;&#x4F7F;&#x7528; Modelsim &#x5BF9;&#x786C;&#x4EF6;&#x5DE5;&#x7A0B;&#x8FDB;&#x884C;&#x4EFF;&#x771F;&#x65F6;, &#x5C06;&#x673A;&#x5668;&#x7801;&#x4F5C;&#x4E3A;&#x521D;&#x59CB;&#x5316;&#x6587;&#x4EF6;&#x5BF9;&#x8BE5; RAM &#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;, &#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x6211;&#x4EEC;&#x5728;&#x4EFF;&#x771F;&#x5C42;&#x9762;&#x4E0A;&#x628A;&#x7F16;&#x5199;&#x7684;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F; &quot;&#x4E0B;&#x8F7D;&quot; &#x8FDB;&#x4E86;&#x786C;&#x4EF6;&#x5185;&#x5B58;&#x91CC;. &#x7531;&#x4E8E; Modelsim &#x8981;&#x6C42;&#x4F7F;&#x7528; hex &#x6587;&#x4EF6;&#x8FDB;&#x884C; RAM &#x7684;&#x521D;&#x59CB;&#x5316;, &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x628A; .axf &#x6587;&#x4EF6;&#x7684;&#x673A;&#x5668;&#x7801;&#x4FE1;&#x606F;&#x8F93;&#x51FA;&#x5230;&#x4E00;&#x4E2A; .hex &#x6587;&#x4EF6;&#x4E2D;.<br>&#x53E6;&#x5916;, &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x9605;&#x8BFB;&#x5206;&#x6790; .axf &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;, &#x6211;&#x4EEC;&#x518D;&#x5C06;&#x5176;&#x5185;&#x5BB9;&#x8F6C;&#x6362;&#x8F93;&#x51FA;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684; .txt &#x6587;&#x4EF6;&#x4E2D;.
 &#x901A;&#x8FC7;&#x5728; Options &#x754C;&#x9762;&#x7684; User &#x680F;&#x4E2D;&#x6DFB;&#x52A0;&#x4E24;&#x6761; Keil &#x547D;&#x4EE4;&#x6765;&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x64CD;&#x4F5C;:</p>
-<pre><code class="lang-keil">from -cvf .\code.axf --vhx --32x1 -o code.hex
-from -cvf .\code.axf -o code.txt
+<pre><code class="lang-keil">fromelf -cvf .\code.axf --vhx --32x1 -o code.hex
+fromelf -cvf .\code.axf -o code.txt
 </code></pre>
 <p>&#x6CE8;&#x610F;, &#x8FD9;&#x91CC; .axf &#x6587;&#x4EF6;&#x662F;&#x5728;&#x5DE5;&#x7A0B;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;, &#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4E0A;&#x4E00;&#x6B65;&#x5C06;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x4FEE;&#x6539;&#x5230;&#x4E86;&#x6839;&#x76EE;&#x5F55;.</p>
 <center><img src="../img/lab1/02-07.png" alt="02-07" style="zoom:92%;"></center><center style="color:#0" ;="">&#x5728; User &#x680F;&#x6DFB;&#x52A0;&#x547D;&#x4EE4;</center> 
@@ -713,8 +700,7 @@ from -cvf .\code.axf -o code.txt
 <p>&#x5728; Options &#x754C;&#x9762;&#x4E2D;&#x7684; Linker &#x680F;&#x4E2D;&#x52FE;&#x9009; &quot;Use Memory Layout from Target Dialog&quot; &#x4EE5;&#x53CA; &quot;Don&#x2019;t Search Standard Librarie&quot; &#x4E24;&#x4E2A;&#x9009;&#x9879;.</p>
 <center><img src="../img/lab1/02-08.png" alt="02-08" style="zoom:80%;"></center><center style="color:#0" ;="">Linker &#x8BBE;&#x7F6E;</center> 
 
-<!-- -->
-<div class="panel panel-danger"><div class="panel-heading"><h5 class="panel-title" id="&#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;"><i class="fa fa-bullhorn"></i> &#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;?</h5></div><div class="panel-body"><p>????????????????</p></div></div>
+
 <h2 id="&#x4EFF;&#x771F;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;">&#x4EFF;&#x771F;/&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;</h2>
 <p>&#x6253;&#x5F00; Options &#x754C;&#x9762;&#x4E2D;&#x7684; Debug &#x680F;, &#x5176;&#x4E2D;&#x5206;&#x4E3A;&#x4E24;&#x5927;&#x5757;&#x8BBE;&#x7F6E;: &#x4EFF;&#x771F;&#x548C;&#x8C03;&#x8BD5;, &#x8C03;&#x8BD5;&#x5DE5;&#x4F5C;&#x9700;&#x8981;&#x5728;&#x7269;&#x7406;&#x786C;&#x4EF6;&#x548C;&#x8C03;&#x8BD5;&#x5668;&#x7684;&#x914D;&#x5408;&#x4E0B;&#x8FDB;&#x884C;, &#x8003;&#x8651;&#x5230;&#x6211;&#x4EEC;&#x63A5;&#x4E0B;&#x6765;&#x5C06;&#x8981;&#x7F16;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#x6CA1;&#x6709;&#x6D89;&#x53CA;&#x5BF9;&#x4E13;&#x7528;&#x5916;&#x8BBE;&#x7684;&#x64CD;&#x4F5C;, &#x53EA;&#x6D89;&#x53CA;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x7684;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x548C;&#x8BA1;&#x7B97;, &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x52FE;&#x9009; &quot;Use Simulator&quot;, &#x6307;&#x660E;&#x901A;&#x8FC7;&#x8F6F;&#x4EF6;&#x4EFF;&#x771F;&#x8FDB;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x6D4B;&#x8BD5;.</p>
 <center><img src="../img/lab1/02-09.png" alt="02-09" style="zoom:70%;"></center><center style="color:#0" ;="">&#x8BBE;&#x7F6E;&#x8FD0;&#x884C;&#x5728;&#x8F6F;&#x4EF6;&#x4EFF;&#x771F;&#x6A21;&#x5F0F;</center> 
@@ -723,10 +709,9 @@ from -cvf .\code.axf -o code.txt
 <p>&#x5728; Options &#x754C;&#x9762;&#x7684; Utilities &#x680F;&#x4E2D;&#x53D6;&#x6D88;&#x52FE;&#x9009; &quot;Update Target before Debugging&quot;.</p>
 <center><img src="../img/lab1/02-10.png" alt="02-10" style="zoom:100%;"></center><center style="color:#0" ;="">Utilities &#x8BBE;&#x7F6E;</center> 
 
-<!-- -->
-<div class="panel panel-danger"><div class="panel-heading"><h5 class="panel-title" id="&#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;"><i class="fa fa-bullhorn"></i> &#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;?</h5></div><div class="panel-body"><p>????????????????</p></div></div>
+
 <p>&#x81F3;&#x6B64;, &#x4E00;&#x4E2A;&#x65B0;&#x7684; Keil &#x73AF;&#x5883;&#x5C31;&#x642D;&#x5EFA;&#x597D;&#x5566;.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By UESTC Intelligent Chip and System Design Lab. &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2022-01-26 22:15:53 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By UESTC Intelligent Chip and System Design Lab. &#x91C7;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x4E2D;&#x56FD;&#x5927;&#x9646; &#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E; 2022-02-23 19:13:28 </span> </footer>
                                 
                                 </section>
                             
@@ -769,7 +754,7 @@ from -cvf .\code.axf -o code.txt
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"搭建 Keil 环境","level":"1.3.2","depth":2,"next":{"title":"运行吧, 第一个汇编程序","level":"1.3.3","depth":2,"path":"lab1/sec_3.md","ref":"lab1/sec_3.md","articles":[]},"previous":{"title":"ARM 汇编回顾","level":"1.3.1","depth":2,"path":"lab1/sec_1.md","ref":"lab1/sec_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","callouts","page-footer-ex","-livereload","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","visible":true},"page-footer-ex":{"copyright":"By UESTC Intelligent Chip and System Design Lab. 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WQ GitBook","gitbook":"*"},"file":{"path":"lab1/sec_2.md","mtime":"2022-01-26T14:15:53.071Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-21T06:00:18.378Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"搭建 Keil 环境","level":"1.3.2","depth":2,"next":{"title":"运行吧, 第一个汇编程序","level":"1.3.3","depth":2,"path":"lab1/sec_3.md","ref":"lab1/sec_3.md","articles":[]},"previous":{"title":"ARM 汇编回顾","level":"1.3.1","depth":2,"path":"lab1/sec_1.md","ref":"lab1/sec_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","callouts","page-footer-ex","-livereload","theme-comscore","-sharing"],"styles":{"website":"styles/styles.css"},"pluginsConfig":{"callouts":{"important":{"alert":"danger","picto":"fa-bullhorn"},"danger":{"alert":"danger","picto":"fa-exclamation-circle"},"question":{"alert":"info","picto":"fa-question-circle"},"hint":{"alert":"success","picto":"fa-lightbulb-o"},"showTypeInHeader":false,"must":{"alert":"warning","picto":"fa-edit"},"flag":{"alert":"success","picto":"fa-flag"},"info":{"alert":"info","picto":"fa-info-circle"},"note":{"alert":"info","picto":"fa-edit"},"fread":{"alert":"info","picto":"fa-comment"}},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"导航","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","visible":true},"page-footer-ex":{"copyright":"By UESTC Intelligent Chip and System Design Lab. 采用[知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WQ GitBook","gitbook":"*"},"file":{"path":"lab1/sec_2.md","mtime":"2022-02-23T11:13:28.066Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-23T11:18:11.079Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
